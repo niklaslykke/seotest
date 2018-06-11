@@ -1,0 +1,1096 @@
+/* GLOBAL -START- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    min-height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+p,
+footer,
+#searchInput,
+#sortBox,
+#genreSort {
+    font-family: 'Century Gothic', 'Lato', sans-serif;
+}
+
+/* HEADER -START- */
+
+header {
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    overflow: hidden;
+}
+
+#logo-container {
+    display: inline-block;
+    width: 12em;
+    height: 5.5em;
+    background-color: rgb(0, 0, 0);
+    float: left;
+    margin-left: -6%;
+}
+
+#logo {
+    margin-left: 2.5em;
+    margin-top: 0.7em;
+    width: 7em;
+}
+
+/* MOBILE "BURGER" MENU */
+
+#burgerMenu {
+    display: block;
+    position: fixed;
+    float: right;
+    z-index: 1;
+    margin-left: 87%;
+    margin-top: 3%;
+}
+
+nav input {
+    display: inline;
+    width: 33px;
+    height: 33px;
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+}
+
+.burger {
+    display: inline;
+    float: right;
+    clear: right;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.3s ease-out,
+    opacity 0.3s ease-out;
+}
+
+nav input:checked ~ .burger:nth-child(2) {
+    transform: rotate(45deg) translate(2px);
+}
+
+nav input:checked ~ .burger:nth-child(3) {
+    opacity: 0;
+}
+
+nav input:checked ~ .burger:nth-child(4) {
+    transform: rotate(-45deg) translate(-2px);
+}
+
+/* OFF SCREEN MENU */
+
+#hiddenNav {
+    position: fixed;
+    width: 100%;
+    margin-top: -3%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-out;
+    z-index: -1;
+}
+
+nav ul {
+    list-style: none;
+    transform: skewX(-20deg);
+    background-color: rgb(150, 150, 150);
+}
+
+nav li {
+    padding: 5%;
+    margin-left: 5%;
+}
+
+nav li:first-child {
+    padding-top: 15%;
+}
+
+nav li:last-child {
+    padding-bottom: 10%;
+}
+
+nav li a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: rgb(255, 255, 255);
+}
+
+nav input:checked ~ #hiddenNav {
+    transform: translateX(-52%);
+}
+
+nav li,
+#logo-container {
+    transform: skewX(-20deg);
+}
+
+nav span {
+    display: block;
+    transform: skewX(20deg);
+}
+
+.current_page {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+
+/* HEADER -END- */
+
+/* FRONT PAGE -START- */
+
+/* MAIN: Jssor Responsive Touch Slider -START- */
+
+/* https://www.jssor.com/demos/simple-fade-slideshow.slider */
+
+/* SLIDESHOW CONTAINER & SLIDES */
+
+#slideContainer {
+    position: relative;
+    top: 0px;
+    left 0px;
+    width: 1500px;
+    height: 500px;
+    overflow: hidden;
+}
+
+/* SLIDESHOW BULLET NAVIGATION */
+
+#bulletNav {
+    position: absolute;
+    cursor: pointer;
+    bottom: 12px;
+    right: 12px;
+}
+
+#bulletNav {
+    fill: rgb(255, 255, 255);
+    fill-opacity: 0.5;
+}
+
+#bulletNav .bullet:hover {
+    fill-opacity: 0.7;
+}
+
+#bulletNav .bulletActive {
+    fill-opacity: 1;
+}
+
+#bulletNav .bulletNotActive {
+    opacity: 0.3;
+}
+
+.bullet {
+    width: 16px;
+    height: 16px;
+}
+
+.bulletsvg {
+    position: absolute;
+    top: 0px;
+    left 0px;
+    width: 100%;
+}
+
+/* SLIDESHOW ARROW NAVIGATION */
+
+.arrowNav {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    width: 55px;
+    height: 55px;
+    top: 0px;
+}
+
+.left {
+    left: 25px;
+}
+
+.right {
+    right: 25px;
+}
+
+.arrowNav {
+    fill: none;
+    stroke: rgb(255, 255, 255);
+    stroke-width: 360;
+    stroke-miterlimit: 10;
+}
+
+.arrowNav:hover {
+    opacity: 0.8;
+}
+
+.arrowsvg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+
+/* SLIDESHOW HEADINGS */
+
+.slideHeading {
+    position: absolute;
+    width: 65%;
+    top: 65%;
+    left: -1%;
+    transform: skewX(-20deg);
+}
+
+.slideHeading span {
+    color: rgb(255, 255, 255);
+    font-size: 2.7em;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2% 7% 2% 10%;
+}
+
+/* MAIN: Jssor Responsive Touch Slider -END- */
+
+/* "NYHEDER" Section */
+
+.heading_container {
+    margin-top: 3%;
+    margin-right: 30%;
+    margin-left: 30%;
+    width: 40%;
+    overflow: hidden;
+}
+
+.heading {
+    text-align: center;
+    font-size: 1.2em;
+    transform: skewX(-20deg);
+    margin-bottom: -9%;
+}
+
+.heading_line {
+    width: 125px;
+}
+
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    width: 100%;
+    font-size: 0.4em;
+    margin-top: 5%;
+}
+
+.flex section {
+    order: 2;
+    width: 75%;
+    margin-bottom: 10%;
+}
+
+.flex img {
+    width: 100%;
+}
+
+.flex a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.buy {
+    width: 90%;
+    padding: 5%;
+    margin-top: 7%;
+    background-color: rgb(200, 200, 200);
+    transform: skewX(-20deg);
+}
+
+.buy span {
+    margin-left: 5%;
+    padding: 9% 30%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+/* FRONT PAGE -END- */
+
+/* "SHOP" PAGE -START- */
+
+.shop {
+    font-size: 0.9em;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 1%;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 1em;
+}
+
+.enterShop {
+    display: none;
+}
+
+.enterSearch {
+    display: inherit;
+}
+
+.searchActive {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+
+/* PLACEHOLDER COLOR */
+
+/* Chrome/Opera/Safari */
+
+::-webkit-input-placeholder {
+    color: rgb(255, 255, 255);
+}
+
+/* Firefox 19+ */
+
+::-moz-placeholder {
+    color: rgb(255, 255, 255);
+}
+
+/* IE 10+ */
+
+:-ms-input-placeholder {
+    color: rgb(255, 255, 255);
+}
+
+/* Firefox 18- */
+
+:-moz-placeholder {
+    color: rgb(255, 255, 255);
+}
+
+#sortBox {
+    display: inline;
+    float: left;
+    width: 20.1%;
+    height: 20px;
+    margin-bottom: 2%;
+    margin-left: 1.1%;
+    font-size: 0.4em;
+    background-color: rgb(240, 240, 240);
+}
+
+#shopContainer {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
+#searchShop {
+    flex: 80%;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 0.3em;
+    margin-top: 0%;
+}
+
+#shopContainer aside {
+    text-align: center;
+    font-size: 1em;
+    flex: 15%;
+}
+
+#genreSort {
+    margin-left: 4%;
+}
+
+#genreSort ul {
+    margin-bottom: 25%;
+    border-bottom: 1px solid black;
+    list-style-type: square;
+}
+
+#genreSort li {
+    cursor: pointer;
+    margin-bottom: 10%;
+}
+
+.active {
+    font-size: 1.1em;
+    font-weight: 900;
+}
+
+/* "SHOP" PAGE -END- */
+
+/* "PRODUCT" PAGE -START- */
+
+.product-info {
+    font-size: 1.4em;
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+.product-info h6,
+.product-info h2,
+.product-info h3,
+.product-info h4 {
+    transform: skewX(-20deg);
+}
+
+.product-over-breaker {
+    width: 100%;
+}
+
+.put-i-kurv {
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.product-slideshow {
+    width: 100%;
+    position: relative;
+    margin-right: 5%;
+}
+
+.product-slideshow .mySlides {
+    width: 100%;
+}
+
+.slideshow-pile {
+    padding: 8px 16px;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 3em;
+}
+
+.slideshow-pile:hover {
+    opacity: 0.7;
+}
+
+.product-left {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(-0%, -50%)
+}
+
+.product-right {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%)
+}
+
+.product-breaker {
+    width: 90%;
+    background-color: black;
+    height: 3px;
+    margin: auto;
+    margin-top: 4%;
+    transform: skewX(-30deg);
+}
+
+.spotify-player {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+.product-add-info {
+
+    width: 100%;
+    display: inline-block;
+    /*        float: right;*/
+}
+
+.product-add-info h2 {
+    text-align: center;
+        transform: skewX(-20deg);
+        margin-top: 4%;
+        margin-bottom: 4%;
+}
+
+.product-add-info article {
+    float: left;
+    padding: 1em;
+    width: 50%;
+}
+
+.product-add-info p {
+    padding: inherit;
+}
+
+.product-answer {
+    background-color: rgb(240, 240, 240);
+}
+
+/* "PRODUCT" PAGE -END- */
+
+/* "RECOMMENDATIONS" PAGE -START- */
+
+.rec {
+    text-align: center;
+    margin: 1.5% auto;
+    margin-top: 1.5%;
+    width: 90%;
+}
+
+.rec .heading {
+    margin-bottom: 0%;
+}
+
+.rec-text {
+    font-size: 1.2em;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+
+.accordion {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    position: relative;
+    margin-bottom: 1.2%;
+    background-color: rgb(240, 240, 240);
+}
+
+.accordion img {
+    width: 100%;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+
+.panel {
+    display: none;
+    overflow: hidden;
+}
+
+.record-name {
+    font-size: 1.7em;
+    transform: skewX(-20deg);
+}
+
+.record-text {
+    padding: 1.5%;
+    font-size: 1em;
+}
+
+.record-text p {
+    padding-left: 1em;
+    font-size: 1.2em;
+}
+
+.fa-angle-down {
+    text-align: center;
+}
+
+.panel .spotify-player {
+    padding: 1%;
+    width: auto;
+    display: inline;
+    float: none;
+    height: 7em;
+}
+
+.panel {
+    margin-top: 6%;
+    text-align: center;
+}
+
+.panel a {
+    font-size: 1em;
+    padding: 0.7em;
+    margin-top: -3%;
+    font-family: 'Century Gothic', 'Lato', sans-serif;
+    display: block;
+}
+
+/* "RECOMMENDATIONS" PAGE -END- */
+
+/* "ABOUT" PAGE -START- */
+
+/*BACKGROUND START */
+
+#fp-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../images/billedbum.png);
+    background-size: cover;
+    background-position: 50%;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+/* BACKGROUND END */
+
+.about {
+    margin-top: 5%;
+    width: 100%;
+    display: inline-block;
+}
+
+.about img {
+    -webkit-box-shadow: -9px 10px 34px 0px rgba(0, 0, 0, 0.56);
+    -moz-box-shadow: -9px 10px 34px 0px rgba(0, 0, 0, 0.56);
+    box-shadow: -9px 10px 34px 0px rgba(0, 0, 0, 0.30);
+}
+
+.about h1 {
+    font-size: 2em;
+}
+
+.about p {
+    font-size: 1.1em;
+    margin-top: 1%;
+}
+
+.michael img {
+    width: 70%;
+    margin-left: 15%;
+
+}
+
+.michael section {
+    margin: 5%;
+}
+
+.why img {
+    width: 80%;
+    margin-left: 10%;
+
+}
+
+.why section {
+    margin: 5%;
+}
+
+/* "ABOUT" PAGE -END- */
+
+/* FOOTER -START- */
+
+footer {
+    background-color: rgb(240, 240, 240);
+    border-top: 5px solid rgb(0, 0, 0);
+    text-align: center;
+    font-size: 0.6em;
+    line-height: 1.5em;
+}
+
+footer section {
+    margin-top: 3%;
+}
+
+footer img {
+    margin: 1%;
+    margin-bottom: 3%;
+    width: 6%;
+}
+
+/* FOOTER -END- */
+
+/* GLOBAL -END- */
+
+/* TABLET -START- */
+
+@media screen and (min-width: 768px) {
+
+    /* HEADER -START- */
+    /* HEADER -END- */
+    /* FRONT PAGE -START- */
+    /* FRONT PAGE -END- */
+    /* "SHOP" PAGE -START- */
+    /* "SHOP" PAGE -END- */
+    /* "PRODUCT" PAGE -START- */
+    /* "PRODUCT" PAGE -END- */
+    /* "RECOMMENDATIONS" PAGE -START- */
+    /* "RECOMMENDATIONS" PAGE -END- */
+    /* "ABOUT" PAGE -START- */
+    /* "ABOUT" PAGE -END- */
+    /* FOOTER -START- */
+    /* FOOTER -END- */
+}
+
+/* TABLET -END- */
+
+/* 13" DESKTOP -START- */
+
+@media screen and (min-width: 1024px) {
+
+    /* HEADER -START- */
+    header {
+        background-color: rgb(240, 240, 240);
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #logo-container {
+        display: inline-block;
+        width: 15em;
+        height: 7.4em;
+        background-color: rgb(0, 0, 0);
+        float: left;
+        margin-left: -2%;
+    }
+
+    #logo {
+        margin-left: 2.5em;
+        margin-top: 0.8em;
+        width: 10em;
+    }
+
+    /* UNDO "BURGER" MENU */
+    #burgerMenu {
+        display: inline;
+        position: relative;
+        z-index: 1;
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+
+    nav input {
+        display: none;
+    }
+
+    .burger {
+        position: absolute;
+        width: 0%;
+    }
+
+    /* UNDO OFF SCREEN MENU */
+    #hiddenNav {
+        display: inline;
+        position: relative;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    nav ul {
+        
+        transform: skewX(0deg);
+        background: none;
+    }
+
+    nav li {
+        padding: 0%;
+        margin-left: 0%;
+    }
+
+    nav li:first-child {
+        padding-top: 0%;
+    }
+
+    nav li:last-child {
+        padding-bottom: 0%;
+    }
+
+    /* DESKTOP MENU */
+    nav ul {
+        float: right;
+        position: relative;
+    }
+
+    nav li {
+        float: left;
+        display: inline-block;
+        list-style: none;
+        text-decoration: none;
+        border-left: 5px solid rgb(0, 0, 0);
+
+    }
+
+    nav li a {
+        display: block;
+        padding: 1.4em;
+        padding-top: 2.5em;
+        padding-bottom: 2.4em;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 1.2em;
+        background-color: rgb(240, 240, 240);
+        overflow: hidden;
+    }
+
+    nav li a:last-child {
+        padding-right: 2.5em;
+        margin-right: -1.1em;
+    }
+
+    nav li a:hover {
+        color: rgb(255, 255, 255);
+        background-color: rgb(0, 0, 0);
+    }
+
+    .current_page {
+        color: rgb(255, 255, 255);
+        background-color: rgb(0, 0, 0);
+    }
+
+    /* HEADER -END- */
+    /* FRONT PAGE -START- */
+    /* MAIN: Jssor Responsive Touch Slider -START- */
+    /* SLIDESHOW HEADINGS */
+    .slideHeading {
+        width: 50%;
+        top: 75%;
+    }
+
+    .slideHeading span {
+        font-size: 2em;
+    }
+    /* MAIN: Jssor Responsive Touch Slider -END- */
+    /* "NYHEDER" Section */
+    .heading_container {
+        margin-right: 41.5%;
+        margin-left: 41.5%;
+        width: 17%;
+    }
+
+    .heading {
+        font-size: 2.2em;
+        margin-bottom: -3%;
+    }
+
+    .heading_line {
+        width: 250px;
+    }
+
+    .flex {
+        font-size: 0.8em;
+        margin-top: 3%;
+    }
+
+    .flex section {
+        width: 20.1%;
+        margin-bottom: 5%;
+    }
+
+    /* FRONT PAGE -END- */
+    /* "SHOP" PAGE -START- */
+    .shop {
+        font-size: 1.9em;
+    }
+
+    .searchInput {
+        font-size: 1.3em;
+    }
+
+    #sortBox {
+        float: right;
+        height: 35px;
+        margin-right: 2%;
+        font-size: 1em;
+    }
+
+    #searchShop {
+        flex: 85%;
+        font-size: 0.7em;
+    }
+
+    #shopContainer aside {
+        text-align: left;
+        flex: 10%;
+    }
+
+    #genreSort {
+        margin-left: 2%;
+    }
+
+    #genreSort ul {
+        margin-bottom: 15%;
+    }
+
+    #genreSort li {
+        margin-bottom: 5%;
+    }
+
+    /* "SHOP" PAGE -END- */
+    /* "PRODUCT" PAGE -START- */
+    .product-slideshow {
+        width: 40%;
+        float: right;
+        position: relative;
+        margin-top: 5%;
+        margin-right: 10%;
+    }
+    .product-over-breaker {
+        width: 100%;
+        display: block;
+        height: 43em;
+    }
+    .info-kurv,
+    .product-slideshow {
+        display: inline-block;
+    }
+    .product-info {
+        margin: 5em;
+    }
+    .put-i-kurv {
+        margin-left: 5em;
+        margin-top: 5em;
+    }
+
+
+    .spotify-og-info {
+        width: 100%;
+        display: block;
+        margin-top: 5%;
+        /*        height: 700px;*/
+    }
+    .spotify-player {
+        width: 40%;
+        display: inline-block;
+        float: left;
+        margin-left: 10%;
+        height: 45em;
+    }
+    .product-add-info {
+        padding: 2em;
+        width: 40%;
+    }
+section .kurv-section{
+        width: 70%;
+    }
+
+    /* "PRODUCT" PAGE -END- */
+    /* "RECOMMENDATIONS" PAGE -START- */
+    .accordion {
+        text-align: left;
+    }
+
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) 
+.active,
+.accordion:hover {
+    background-color: #ccc;
+}
+*/
+    /* Style the accordion panel. Note: hidden by default */
+    .record-name {
+        font-size: 2em;
+    }
+
+    .record-text {
+        position: absolute;
+        top: 50%;
+        left: 2%;
+        padding-left: 13%;
+        margin-left: -10%;
+        color: rgb(255, 255, 255);
+        background: rgba(0, 0, 0, 0.7);
+        transform: skewX(-20deg);
+    }
+
+    .record-text p {
+        transform: skewX(20deg);
+    }
+
+    .fa-angle-down {
+        position: absolute;
+        margin-top: -5%;
+        color: white;
+        width: 100%;
+        text-align: center;
+    }
+
+    .panel .spotify-player {
+        padding: 1%;
+        width: auto;
+        display: inline;
+        float: none;
+        height: 7em;
+    }
+
+    .panel {
+        text-align: center;
+        margin: auto;
+    }
+
+    .panel a {
+        font-size: 1.2em;
+        padding: 0.7em;
+        margin-top: auto;
+    }
+
+    .acc-container {
+        margin-bottom: 2%;
+    }
+    /* "RECOMMENDATIONS" PAGE -END- */
+    /* "ABOUT" PAGE -START- */
+    .about {
+        width: 100%;
+        display: inline-block;
+    }
+
+    .about img {
+        -webkit-box-shadow: -9px 10px 34px 0px rgba(0, 0, 0, 0.56);
+        -moz-box-shadow: -9px 10px 34px 0px rgba(0, 0, 0, 0.56);
+        box-shadow: -9px 10px 34px 0px rgba(0, 0, 0, 0.30);
+    }
+
+    .about h1 {
+        font-size: 2em;
+    }
+
+    .about p {
+        font-size: 1.1em;
+        margin-top: 1%;
+    }
+
+    .michael img {
+        width: 25%;
+        margin: 5%;
+        float: right;
+    }
+
+    .michael section {
+        margin: 5%;
+    }
+
+    .why img {
+        width: 40%;
+        margin: 5%;
+        float: left;
+    }
+
+    .why section {
+        margin: 5%;
+    }
+    /* "ABOUT" PAGE -END- */
+    /* FOOTER -START- */
+    footer {
+        font-size: 1em;
+    }
+
+    footer img {
+        width: 5%;
+    }
+    /* FOOTER -END- */
+}
+
+/* 13" DESKTOP -END- */
